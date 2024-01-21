@@ -1,4 +1,4 @@
 python-telegram-bot==13.7
-pbwrap==1.1.4
+pbwrap==1.4.0
 python-dotenv
 telethon
