@@ -1,7 +1,7 @@
 {
   "name": "telegram-pastebin-bot",
   "description": "Telegram bot for pasting code to Pastebin",
-  "repository": "https://github.com/nobodydi/your-repository",
+  "repository": "https://github.com/nobodydi/TESTBOT",
   "env": {
     "TELEGRAM_BOT_TOKEN": {
       "description": "Telegram Bot Token",
@@ -12,12 +12,6 @@
       "required": true
     }
   },
-  "addons": ["heroku/python"],
-  "buildpacks": [
-    {
-      "url": "https://github.com/heroku/heroku-buildpack-python.git"
-    }
-  ],
   "scripts": {
     "postdeploy": "python paste_bot.py"
   },
@@ -36,3 +30,4 @@
     }
   }
 }
+
