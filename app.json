@@ -1,0 +1,38 @@
+{
+  "name": "telegram-pastebin-bot",
+  "description": "Telegram bot for pasting code to Pastebin",
+  "repository": "https://github.com/your-username/your-repository",
+  "env": {
+    "TELEGRAM_BOT_TOKEN": {
+      "description": "Telegram Bot Token",
+      "required": true
+    },
+    "PASTEBIN_API_KEY": {
+      "description": "Pastebin API Key",
+      "required": true
+    }
+  },
+  "addons": ["heroku/python"],
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-python.git"
+    }
+  ],
+  "scripts": {
+    "postdeploy": "python paste_bot.py"
+  },
+  "formation": {
+    "web": {
+      "quantity": 0
+    },
+    "worker": {
+      "quantity": 1
+    }
+  },
+  "environments": {
+    "production": {
+      "TELEGRAM_BOT_TOKEN": "your-telegram-bot-token",
+      "PASTEBIN_API_KEY": "your-pastebin-api-key"
+    }
+  }
+}
