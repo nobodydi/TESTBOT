@@ -1,7 +1,7 @@
 {
-  "name": "telegram-pastebin-bot",
+  "name": "pastebin-telegram-bot",
   "description": "Telegram bot for pasting code to Pastebin",
-  "repository": "https://github.com/nobodydi/TESTBOT",
+  "repository": "https://github.com/your-username/your-repository",
   "env": {
     "TELEGRAM_BOT_TOKEN": {
       "description": "Telegram Bot Token",
@@ -13,13 +13,12 @@
     }
   },
   "scripts": {
-    "postdeploy": "python paste_bot.py"
+    "postdeploy": "python past_bot.py"
   },
- "formation": {
-  "worker": {
-    "quantity": 1
-  }
-},
+  "formation": {
+    "web": {
+      "quantity": 0
+    },
     "worker": {
       "quantity": 1
     }
@@ -31,4 +30,3 @@
     }
   }
 }
-
