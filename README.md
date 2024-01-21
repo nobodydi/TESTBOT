@@ -31,14 +31,22 @@ You can deploy this Telegram bot to Heroku. Follow the steps below:
      - `PASTEBIN_API_KEY`: Your Pastebin API key.
 
 5. **Deploy the App:**
-   - Connect your GitHub repository to your Heroku app.
-   - Manually deploy the app from the "Deploy" tab.
+  
+   <p align="center">
+<b>𝗗𝗘𝗣𝗟𝗢𝗬𝗠𝗘𝗡𝗧 𝗠𝗘𝗧𝗛𝗢𝗗𝗦</b>
+</p>
 
-6. **Run the Bot:**
+<h3 align="center">
+    ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 」─
+</h3>
+
+<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/nobodydi/TESTBOT"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-green?style=for-the-badge&logo=heroku" width="520" height="138.45"/></a></p>
+
+7. **Run the Bot:**
    - Once deployed, go to the "Resources" tab in your Heroku app dashboard.
    - Make sure the worker dyno is turned on.
 
-7. **Enjoy!**
+8. **Enjoy!**
    Your Telegram bot should be up and running on Heroku.
 
 **Note:** Remember to keep your API tokens confidential. Do not expose them in public repositories.
