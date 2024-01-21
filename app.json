@@ -15,10 +15,11 @@
   "scripts": {
     "postdeploy": "python paste_bot.py"
   },
-  "formation": {
-    "web": {
-      "quantity": 0
-    },
+ "formation": {
+  "worker": {
+    "quantity": 1
+  }
+},
     "worker": {
       "quantity": 1
     }
