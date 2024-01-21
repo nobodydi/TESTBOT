@@ -1,4 +1,3 @@
 python-telegram-bot==13.7
-pbwrap==1.4.0
-python-dotenv
-telethon
+pbwrap==1.1.4
+urllib3==1.26.8
