@@ -1,12 +1,9 @@
+# past_bot.py
 import os
 from pbwrap import Pastebin
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
-
-# Telegram Bot Token
-TELEGRAM_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
-# Pastebin API Key
-PASTEBIN_API_KEY = os.environ.get('PASTEBIN_API_KEY')
+from config import TELEGRAM_BOT_TOKEN, PASTEBIN_API_KEY
 
 # Initialize Pastebin client
 pastebin = Pastebin(api_dev_key=PASTEBIN_API_KEY)
@@ -28,7 +25,7 @@ def paste_to_pastebin(update: Update, context: CallbackContext) -> None:
 
 if __name__ == "__main__":
     # Initialize the updater
-    updater = Updater(TELEGRAM_TOKEN, use_context=True)
+    updater = Updater(TELEGRAM_BOT_TOKEN, use_context=True)
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
@@ -44,4 +41,3 @@ if __name__ == "__main__":
 
     # Run the bot until you send a signal to stop
     updater.idle()
-
