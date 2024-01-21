@@ -1,4 +1,3 @@
-import telebot
 from pbwrap import Pastebin
 
 # Telegram Bot Token
