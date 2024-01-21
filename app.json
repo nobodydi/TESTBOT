@@ -1,7 +1,7 @@
 {
   "name": "pastebin-telegram-bot",
   "description": "Telegram bot for pasting code to Pastebin",
-  "repository": "https://github.com/your-username/your-repository",
+  "repository": "https://github.com/nobodydi/TESTBOT",
   "env": {
     "TELEGRAM_BOT_TOKEN": {
       "description": "Telegram Bot Token",
