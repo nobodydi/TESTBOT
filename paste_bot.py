@@ -1,43 +1,32 @@
-# past_bot.py
-import os
-from pbwrap import Pastebin
-from telegram import Update
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
-from config import TELEGRAM_BOT_TOKEN, PASTEBIN_API_KEY
+import requests
 
-# Initialize Pastebin client
-pastebin = Pastebin(api_dev_key=PASTEBIN_API_KEY)
+def create_pastebin_paste(api_key, text, visibility='private', expiration='1D'):
+    data = {
+        'api_dev_key': api_key,
+        'api_paste_data': text,
+        'api_paste_private': '1' if visibility == 'private' else '0',
+        'api_paste_expire_date': expiration
+    }
 
-def start(update: Update, context: CallbackContext) -> None:
-    update.message.reply_text("Welcome! Send me any code, and I'll paste it to Pastebin for you.")
+    response = requests.post('https://pastebin.com/api/api_post.php', data=data)
 
-def paste_to_pastebin(update: Update, context: CallbackContext) -> None:
-    chat_id = update.message.chat_id
-    code_to_paste = update.message.text
-
-    try:
-        # Create a new paste on Pastebin
-        paste_url = pastebin.create_paste(code_to_paste)
-        update.message.reply_text(f"Your code has been pasted to Pastebin! Here is the link:\n{paste_url}")
-
-    except Exception as e:
-        update.message.reply_text(f"An error occurred: {str(e)}")
+    if response.ok:
+        paste_url = response.text
+        return paste_url
+    else:
+        return None
 
 if __name__ == "__main__":
-    # Initialize the updater
-    updater = Updater(TELEGRAM_BOT_TOKEN, use_context=True)
+    # Replace 'your_pastebin_api_key' with your actual Pastebin API key
+    pastebin_api_key = 'your_pastebin_api_key'
 
-    # Get the dispatcher to register handlers
-    dp = updater.dispatcher
+    # Example text to be pasted
+    example_text = "Hello, this is a test paste!"
 
-    # Register command handlers
-    dp.add_handler(CommandHandler("start", start))
+    # Create a private paste that expires in 1 day
+    paste_url = create_pastebin_paste(pastebin_api_key, example_text, visibility='private', expiration='1D')
 
-    # Register a message handler for pasting code
-    dp.add_handler(MessageHandler(Filters.text & ~Filters.command, paste_to_pastebin))
-
-    # Start the Bot
-    updater.start_polling()
-
-    # Run the bot until you send a signal to stop
-    updater.idle()
+    if paste_url:
+        print(f"Pastebin URL: {paste_url}")
+    else:
+        print("Error creating Pastebin paste. Please check your API key and try again.")
