@@ -1,1 +1,1 @@
-ls your_script.py
+main your_script.py
