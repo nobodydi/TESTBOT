@@ -1,3 +1,4 @@
 worker: python your_script.py
-heroku logs --tail
+heroku-postbuild: pip install -r requirements.txt
+
 
