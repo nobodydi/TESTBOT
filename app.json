@@ -1,32 +1,46 @@
 {
-  "name": "pastebin-telegram-bot",
-  "description": "Telegram bot for pasting code to Pastebin",
+  "name": "your-app-name",
+  "description": "Your Telegram Bot Application",
   "repository": "https://github.com/nobodydi/TESTBOT",
+  "logo": "https://example.com/your-logo.png",
   "env": {
+    "TELEGRAM_API_ID": {
+      "description": "Your Telegram API ID",
+      "required": true
+    },
+    "TELEGRAM_API_HASH": {
+      "description": "Your Telegram API Hash",
+      "required": true
+    },
     "TELEGRAM_BOT_TOKEN": {
-      "description": "Telegram Bot Token",
+      "description": "Your Telegram Bot Token",
       "required": true
     },
     "PASTEBIN_API_KEY": {
-      "description": "Pastebin API Key",
+      "description": "Your Pastebin API Key",
       "required": true
     }
   },
+  "addons": ["heroku/python"],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
   "scripts": {
-    "postdeploy": "python past_bot.py"
+    "postdeploy": "python your_script.py"
   },
   "formation": {
-    "web": {
-      "quantity": 0
-    },
     "worker": {
       "quantity": 1
     }
   },
   "environments": {
     "production": {
-      "TELEGRAM_BOT_TOKEN": "your-telegram-bot-token",
-      "PASTEBIN_API_KEY": "your-pastebin-api-key"
+      "TELEGRAM_API_ID": "your-real-api-id",
+      "TELEGRAM_API_HASH": "your-real-api-hash",
+      "TELEGRAM_BOT_TOKEN": "your-real-bot-token",
+      "PASTEBIN_API_KEY": "your-real-pastebin-api-key"
     }
   }
 }
