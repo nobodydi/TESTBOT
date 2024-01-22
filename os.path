@@ -1,9 +1,0 @@
-# script.py
-
-import os
-
-# Check if the file 'your_script.py' exists
-if os.path.isfile('your_script.py'):
-    print('File exists!')
-else:
-    print('File does not exist.')
