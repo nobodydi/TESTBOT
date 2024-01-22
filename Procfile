@@ -1,2 +1,2 @@
-worker: python paste_bot.py
+worker: python your_script.py
 heroku-postbuild: pip install -r requirements.txt
