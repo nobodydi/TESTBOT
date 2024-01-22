@@ -1,5 +1,11 @@
-__pycache__
-*.pyc
-*.pyo
-*.pyd
-.env
+# your_script.py
+
+from config import Config
+
+api_id = Config.TELEGRAM_API_ID
+api_hash = Config.TELEGRAM_API_HASH
+bot_token = Config.TELEGRAM_BOT_TOKEN
+pastebin_api_key = Config.PASTEBIN_API_KEY
+
+# Use these values in your script...
+
