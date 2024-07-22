@@ -1,4 +1,8 @@
-[![Deploy to Khoyeb](https://img.shields.io/badge/Deploy%20to-Khoyeb-blue?logo=heroku)](https://khoyeb.com/deploy)
+ddhd
+[![Deploy to Khoyeb](https://img.shields.io/badge/Deploy%20to-Khoyeb-blue?logo=heroku)](https://khoyeb.com/deploy?url=https://github.com/nobodydi/BABYFILESBOT)
+
+
+xjd[![Deploy to Khoyeb](https://img.shields.io/badge/Deploy%20to-Khoyeb-blue?logo=heroku)](https://khoyeb.com/deploy)
 
 ## How to Deploy to Khoyeb
 
